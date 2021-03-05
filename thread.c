@@ -17,7 +17,7 @@ int check_prime(int n)
 void *get_primes(void *p)
 {
     int i;
-    for (i = 0; i < *(int *)p; i++)
+    for (i = 1; i < *(int *)p; i++)
     {
         if (check_prime(i))
             printf("%d\n", i);
