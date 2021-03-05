@@ -17,7 +17,7 @@ int check_prime(int n)
 void *get_primes(void *p)
 {
     int i;
-    for (i = 0; i <= *(int *)p; i++)
+    for (i = 0; i < *(int *)p; i++)
     {
         if (check_prime(i))
             printf("%d\n", i);
@@ -35,10 +35,11 @@ int main(void)
 
     pthread_create(&id, NULL, get_primes, &number);
 
-    printf("The thread was created");
+    printf("The thread was created\n");
+
     pthread_join(id, NULL);
 
-    printf("The thread ended");
+    printf("The thread ended\n");
 
     return 0;
 }
